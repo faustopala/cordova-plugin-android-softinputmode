@@ -6,7 +6,7 @@
     <author>Oskar Haarklou Veileborg</author>
     <license>Apache 2.0</license>
     <keywords>cordova,android,softinputmode</keywords>
-    <js-module src="www/interface.js" name="softinputmode">
+    <js-module src="www/interface.js" name="SoftInputMode">
         <clobbers target="SoftInputMode" />
     </js-module>
     <platform name="android">

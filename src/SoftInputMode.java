@@ -1,5 +1,6 @@
 package dk.sculpto.plugin;
 
+import android.app.Activity;
 import android.view.WindowManager;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -34,7 +35,10 @@ public class SoftInputMode extends CordovaPlugin {
 			return;
 		}
 
-		cordova.getActivity().getWindow().setSoftInputMode(mode);
-		callbackContext.success("Success");
+		Activity activity = cordova.getActivity();
+		activity.runOnUiThread(() -> {
+			activity.getWindow().setSoftInputMode(mode);
+			callbackContext.success("Success");
+		});
 	}
 }

@@ -34,7 +34,7 @@ public class SoftInputMode extends CordovaPlugin {
 			return;
 		}
 
-		callbackContext.success("Success");
 		cordova.getActivity().getWindow().setSoftInputMode(mode);
+		callbackContext.success("Success");
 	}
 }

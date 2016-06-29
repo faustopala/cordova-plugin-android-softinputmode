@@ -1,3 +1,7 @@
+var log = function(val) {
+    console.log(val);
+}
+
 module.exports = {
-    set: function(value) { cordova.exec(console.log, console.log, "SoftInputMode", "set", [value]); }
+    set: function(value) { cordova.exec(log, log, "SoftInputMode", "set", [value]); }
 };

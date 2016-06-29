@@ -36,9 +36,13 @@ public class SoftInputMode extends CordovaPlugin {
 		}
 
 		Activity activity = cordova.getActivity();
-		activity.runOnUiThread(() -> {
-			activity.getWindow().setSoftInputMode(mode);
-			callbackContext.success("Success");
+		activity.runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				activity.getWindow().setSoftInputMode(mode);
+				callbackContext.success("Success");
+
+			};
 		});
 	}
 }

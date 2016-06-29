@@ -22,7 +22,7 @@ public class SoftInputMode extends CordovaPlugin {
 	}
 
 	private void set(String value, CallbackContext callbackContext) {
-		int mode = 0;
+		int mode;
 		if(value.equals("adjustNothing"))
 			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
 		else if(value.equals("adjustResize"))
@@ -34,7 +34,7 @@ public class SoftInputMode extends CordovaPlugin {
 			return;
 		}
 
+		callbackContext.success("Success");
 		cordova.getActivity().getWindow().setSoftInputMode(mode);
-		callbackContext.success();
 	}
 }

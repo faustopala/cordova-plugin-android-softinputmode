@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-android-softinputmode",
+  "version": "0.0.2",
+  "description": "Cordova Plugin for changing SoftInputMode at runtime",
+  "cordova": {
+    "id": "cordova-plugin-android-softinputmode",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ziihrs@bitbucket.org/sculpto/cordova-plugin-android-softinputmode.git"
+  },
+  "keywords": [
+    "cordova",
+    "android",
+    "softinputmode",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Oskar Haarklou Veileborg",
+  "license": "Apache 2.0",
+  "homepage": "https://bitbucket.org/sculpto/cordova-plugin-android-softinputmode#readme"
+}

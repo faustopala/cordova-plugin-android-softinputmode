@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-android-softinputmode" version="0.0.1">
+    <name>SoftInputMode</name>
+    <description>Cordova Plugin for changing SoftInputMode at runtime</description>
+    <author>Oskar Haarklou Veileborg</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,softinputmode</keywords>
+    <js-module src="www/interface.js" name="softinputmode">
+        <clobbers target="SoftInputMode" />
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SoftInputMode">
+                <param name="android-package" value="dk.sculpto.plugin.SoftInputMode"/>
+            </feature>
+        </config-file>
+        <source-file src="src/SoftInputMode.java" target-dir="src/dk/sculpto/plugin" />
+    </platform>
+</plugin>

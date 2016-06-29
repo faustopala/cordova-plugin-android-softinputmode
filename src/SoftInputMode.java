@@ -23,19 +23,23 @@ public class SoftInputMode extends CordovaPlugin {
 	}
 
 	private void set(String value, CallbackContext callbackContext) {
-		int mode;
-		if(value.equals("adjustNothing"))
-			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
-		else if(value.equals("adjustResize"))
-			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
-		else if(value.equals("adjustPan"))
-			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
-		else {
-			callbackContext.error("Invalid mode");
-			return;
+		final int mode;
+		switch (value) {
+			case "adjustNothing":
+				mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
+				break;
+			case "adjustResize":
+				mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
+				break;
+			case "adjustPan":
+				mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
+				break;
+			default:
+				callbackContext.error("Invalid mode");
+				return;
 		}
 
-		Activity activity = cordova.getActivity();
+		final Activity activity = cordova.getActivity();
 		activity.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {

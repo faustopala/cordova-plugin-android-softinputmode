@@ -11,12 +11,18 @@ import org.json.JSONException;
  * This class echoes a string called from JavaScript.
  */
 public class SoftInputMode extends CordovaPlugin {
+	private String softInputMode;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if (action.equals("set")) {
+		if(action.equals("set")) {
 			String value = args.getString(0);
 			this.set(value, callbackContext);
+			return true;
+		} else if(action.equals("get")) {
+			if(softInputMode != null)
+				callbackContext.success(softInputMode);
+			else callbackContext.error("Not set");
 			return true;
 		}
 		return false;
@@ -42,7 +48,7 @@ public class SoftInputMode extends CordovaPlugin {
 				activity.getWindow().setSoftInputMode(mode);
 				callbackContext.success("Success");
 
-			};
+			}
 		});
 	}
 }

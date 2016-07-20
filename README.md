@@ -7,4 +7,8 @@ Currently only `adjustPan`, `adjustResize` and `adjustNothing` values are suppor
 ## Example
 After the `deviceready` event:
 
-` window.SoftInputMode.set('adjustNothing')`
+`window.SoftInputMode.set('adjustNothing')`
+
+`window.SoftInputMode.get(callback)`
+
+Where `callback` is called with the current value.

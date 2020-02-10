@@ -36,6 +36,18 @@ public class SoftInputMode extends CordovaPlugin {
 			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 		else if(value.equals("adjustPan"))
 			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
+		else if (value.equals("stateUnspecified"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED;
+		else if (value.equals("stateUnchanged"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED;
+		else if (value.equals("stateHidden"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN;
+		else if (value.equals("stateAlwaysHidden"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN;
+		else if (value.equals("stateAlwaysVisible"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+		else if (value.equals("adjustUnspecified"))
+			mode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED;
 		else {
 			callbackContext.error("Invalid mode");
 			return;
